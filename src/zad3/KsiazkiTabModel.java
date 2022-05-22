@@ -1,48 +1,43 @@
 package zad3;
 
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableModel;
 
-public class KsiazkiTabModel extends AbstractTableModel {
+public class KsiazkiTabModel extends DefaultTableModel {
+	
+	
+	
 	
 	
 	static String[] columnNames = { "Okładka", "Tytuł",
             "Autor", "Cena"};
 
-	@Override
-	public int getRowCount() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
+	
 	public int getColumnCount() {
-		// TODO Auto-generated method stub
-		return columnNames.length;
+		return 4;
 	}
-
-	@Override
-	public Object getValueAt(int rowIndex, int columnIndex) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 	
 	public String getColumnName(int i) {
 		    return columnNames[i];
     }
 	
+	public Class<?> getColumnClass(int i) {
+		
+		
+		return getValueAt(0, i).getClass();
+		
+	}
+	
 	public boolean isCellEditable(int i, int j) {
 		
-		if (j == 0 || j == 1  || j == 2) {  
-		      return false;
-		    } else {
+		if (j == 3) {  
 		      return true;
-		    }	
+		} else {
+		return false;
+		}   
 		
 		
 	}
-	  
-	  
-	  
-	  
 
 }
