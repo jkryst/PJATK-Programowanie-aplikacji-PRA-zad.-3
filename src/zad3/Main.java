@@ -7,36 +7,27 @@
 package zad3;
 
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.Image;
-import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.StringTokenizer;
-
 import javax.swing.BorderFactory;
-import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
-import javax.swing.table.TableModel;
+
 
 
 public class Main extends JFrame {
@@ -225,14 +216,19 @@ public class Main extends JFrame {
 					while ((line = br.readLine()) != null) {
 						
 						String[] tab = line.split(",");
-
-						imgname = f.getParent()+"\\"+tab[0];	
+						
+						
+						
+						imgname = f.getParent()+"\\"+tab[0];
+						
 						tyt = tab[1];
 						aut = tab[2];
 						cen = tab[3];
+						
 						dodajKsiazke();
-
+						
 					}
+					
 					br.close();
 
 				} catch (FileNotFoundException e1) {
@@ -242,8 +238,8 @@ public class Main extends JFrame {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				} catch (ArrayIndexOutOfBoundsException e1) {
-				    e1.printStackTrace();
-				}   
+				    
+				} 
 
                 }
 
